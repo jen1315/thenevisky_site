@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="icon" href="./gui/img/tree.png" type="image/png">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
 	<title>Portfolio</title>
 </head>
 <body>
@@ -76,7 +76,7 @@
 		  </form>
 <?php
 		  //manda e-mail
-	      $to = "yukkin126@gmail.com";
+	      $to = "thenevisky@altervista.org";
 	      $headers = "From: yukkin126@gmail.com". "\r\n".
 	                 "Reply-To: yukkin126@gmail.com". "\r\n".
 			         "X-Mailer: PHP/". phpversion();
@@ -98,7 +98,7 @@
 			<h3>Links</h3><hr />
 			<a href="#" data-toggle="modal" data-target="#contactModal" style="color: white;">Contact Me</a><br />
 			<a href="https://ko-fi.com/thenevisky" style="color: white;">Get me a Ko-fi</a>
-			<hr />@theNevisky
+			<hr />@theNevisky <?php echo date('Y'); ?>
 		</div>
 	</div>
 	</div>
