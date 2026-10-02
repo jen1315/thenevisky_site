@@ -2,7 +2,7 @@
 
 require_once "database.php";
 
-$paginaHTML = file_get_contents("../../portfolio.html");
+$paginaHTML = file_get_contents("../../portfolio_php.html");
 $date = date('Y');
 
 $pdo = Database::connect();
@@ -48,16 +48,7 @@ if($_GET["page"] == "concept") {
 	}//foreach
 }
 
-//manda e-mail
-$to = "thenevisky@altervista.org";
-$headers = "From: yukkin126@gmail.com". "\r\n".
-		"Reply-To: thenevisky@altervista.org". "\r\n".
-		"X-Mailer: PHP/". phpversion();
-if(!empty($_POST["messaggio"])) {
-	$subject = "data: ". time();
-	$message = $_POST["messaggio"];
-	mail($to, $subject, $message, $headers);
-}//if
+$pdo = Database::disconnect();
 
 $paginaHTML .= str_replace("[content]", $content, $paginaHTML);
 $paginaHTML .= str_replace("[date]", $date, $paginaHTML);
