@@ -3,38 +3,110 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="./gui/img/tree.png" type="image/png">
-    <link rel="stylesheet" href="./assets/css/card.css">
+    <link rel="icon" href="./assets/images/tree.png" type="image/png">
     <title>theNevisky</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@0,400;1,300&display=swap');
+    body {
+        font-family: 'Ysabeau', sans-serif;
+        font-size: 1em;
+        background-image: linear-gradient(to bottom right, black, #222034);
+    }
+    table {
+        background-color: white;
+        min-width: 450px;
+        min-height: 300px;
+        border-radius: 0px 10px 10px 10px;
+    }
+    button {
+        background: #FF4742;
+        border: 1px solid #FF4742;
+        border-radius: 10px 10px 0px 0px;
+        padding: 0.5em;
+        font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+    }
+    button:hover,
+    .active {
+        background-color: white;
+        border: 1px solid white;
+        color: #FF4742;
+    }
+    .links {
+        padding: 10px;
+        width: 70%;
+        text-align: center;
+        margin: 4px 2px;
+        border-radius: 0px;
+    }
+    .links:hover {
+        border: 1px solid #FF4742;
+    }
+    .avatar {
+        width: 45%;
+        text-align: center;
+    }
+    .illustra {
+        width: 170px;
+    }
+    .icon {
+        width: 35px;
+        margin: 13px;
+        margin-bottom: 6px;
+    }
+    .center {
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    .hide {
+        display: none;
+    }
+    footer {
+        text-align: center;
+        color: white;
+        padding-top: 1em;
+    }
+    @media (max-width: 400px) {
+        table { min-width: 350px; }
+        .illustra { width: 150px; }
+        .links { width: 90%; }
+    }
+    </style>
 </head>
 <body>
     <div class="center">
     <button class="info-tab active">Profile</button>
     <button class="links-tab">Links</button>
-    <article id="info">
-      <div class="avatar"><img class="illustra" src="https://thenevisky.altervista.org/gui/img/pix/flan.png" alt=""/></div>
-      <div class="descr">
-        <h1>theNevisky</h1>
+    <table id="info">
+      <tr>
+        <td class="avatar"><img class="illustra" src="./assets/" /></td>
+        <td><h4>theNevisky</h4>
         she/her | chinese italian <br>interested in coding and art.
-      </div>
-      <ul class="socials">
-        <li><a href="https://mobile.twitter.com/thenevisky"><img class="icon" src="https://thenevisky.altervista.org/gui/logo/twitter_logo.png" alt="twitter, now X"></a></li>
-        <li><a href="https://thenevisky.tumblr.com"><img class="icon" src="https://thenevisky.altervista.org/gui/logo/tumblr_logo.png" alt="tumblr"></a></li>
-        <li><a href="https://www.redbubble.com/people/nevisky/shop"><img class="icon" src="https://user-images.githubusercontent.com/29949873/32622388-4e7a9960-c548-11e7-9be6-adbaca0545f5.png" alt="redbubble"/></a></li>
-        <li><a href="http://ko-fi.com/thenevisky"><img class="icon" src="https://thenevisky.altervista.org/gui/logo/ko-fi_logo.png" alt="kofi"/></a></li>
-      </ul>
-    </article>
-    <article id="links" class="hide">
-      <div class="avatar"><img class="illustra" src="https://thenevisky.altervista.org/gui/img/pix/creamsoda.png" alt=""/></div>
-      <div class="descr">
-        <h2>Other links</h2>
-      <ul>
-        <li><a class="links" href="./assets/php/portfolio.php?get=art">Portfolio</a></li>
-        <li><a class="links" href="https://github.com/jen1315">GitHub</a></li>
-        <li><a class="links" href="https://nevischio.itch.io/">itch.io</a></li>
-      </ul>
-      </div>
-    </article>
+        </td>
+      </tr>
+      <tr ma><td colspan="2" style="text-align:center">
+        <a href="https://mobile.twitter.com/thenevisky" target="_blank"><img class="icon" src="./assets/icons/twitter_logo.png"></a>
+        <a href="https://thenevisky.tumblr.com" target="_blank"><img class="icon" src="./assets/icons/tumblr_logo.png"></a>
+        <a href="https://www.redbubble.com/people/nevisky/shop" target="_blank"><img class="icon" src="https://user-images.githubusercontent.com/29949873/32622388-4e7a9960-c548-11e7-9be6-adbaca0545f5.png"/></a>
+        <a href="http://ko-fi.com/thenevisky" target="_blank"><img class="icon" src="./assets/icons/ko-fi_logo.png"/></a>
+      </td></tr>
+    </table>
+    <table id="links" class="hide">
+      <tr>
+        <td class="avatar"><img class="illustra" src="./assets/images/pix/creamsoda.png" /></td>
+        <td><h4>Other links</h4>
+        <button class="links" onclick="window.location.href='illustra.php'">Portfolio</button><br>
+        <button class="links" onclick="window.location.href='https://github.com/jen1315'" target="_blank">GitHub</button>
+        <button class="links" onclick="window.location.href='https://nevischio.itch.io/'" target="_blank">itch.io</button><br>
+        </td>
+      </tr>
+    </table>
     <footer>@theNevisky</footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
