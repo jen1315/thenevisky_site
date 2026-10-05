@@ -38,6 +38,13 @@ article {
     flex: 20%;
 }
 
+/* website-folio */
+iframe {
+    width="500";
+    height="350";
+    frameborder="0"
+}
+
 /* footer */
 footer {
     background-color: black;
