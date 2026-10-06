@@ -3,6 +3,8 @@
 require_once "database.php";
 
 $paginaHTML = file_get_contents("../../portfolio_php.html");
+
+$content = "";
 $date = date('Y');
 
 $pdo = Database::connect();
@@ -36,22 +38,25 @@ if($_GET["page"] == "art") {
 	$content = $listaPixel. $listaIllustra;
 }
 
-if($_GET["page"] == "concept") {
-	$content = "";
-	$sql = "select * from PROJECT";
+if($_GET["page"] == "website") {
+	$sql = "select * from WEBSITE";
 
+	$content = "<article class='frow'>";
 	foreach($pdo->query($sql) as $row) {
-		$content .= $row["Iframe"] . "<br />";
+		$content .= "<div class='column'>
+			<iframe src='". $row["Url"]. "' title='". $row["Title"]. "'></iframe>";
 		if(isset($row["Descrizione"])) {
-			$content .= $row["Descrizione"] . "<br />";
+			$content .= "<p>". $row["Descrizione"]. "</p>";
 		}//if
+		$content .= "</div>";
 	}//foreach
-}
+	$content .= "</article>";
+} 
 
 $pdo = Database::disconnect();
 
-$paginaHTML .= str_replace("[content]", $content, $paginaHTML);
-$paginaHTML .= str_replace("[date]", $date, $paginaHTML);
+$paginaHTML = str_replace("[content]", $content, $paginaHTML);
+$paginaHTML = str_replace("[date]", $date, $paginaHTML);
 echo $paginaHTML;
 
 ?>
